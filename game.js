@@ -3,14 +3,14 @@ function MemoryGame(){
     this.cards = [];
     this.imageArray = [
         'images/barb.png',
-        'images/archer.png',
-        'images/hog.png',
-        'images/icewiz.png',
-        'images/giant.png',
-        'images/gob.png',
-        'images/prince.png',
         'images/bomber.png',
+        'images/giant.png',
+        'images/goblin.png',
+        'images/hog.png',
+        'images/iceWizard.png',
         'images/pekka.png',
+        'images/price.png',
+        'images/wizard.png',
     ];
     this.initGame = function () {
         var images = this.imageArray.concat(this.imageArray);
@@ -21,7 +21,7 @@ function MemoryGame(){
         for ( var i = 0; i < images.length; i++){
             var newCard = new Card(images[i], this);
             var cardDomElement = newCard.render();
-            $(".game-container").append(cardDomElement);
+            $("#gameArea").append(cardDomElement);
             cardArray.push(newCard);
         }
         return cardArray;
@@ -33,14 +33,6 @@ function MemoryGame(){
 
 
 
-
-// //Initiate on page load and instantiate game and responsive objects
-
-// function Game(){
-//     this.images= [];
-//     this.initizialize = function(){
-//         this.createBoard(this.shuffleCards)
-//     }
 //     this.imageArray =[
 //         'images/barb.png', 
 //         'images/archer.png',

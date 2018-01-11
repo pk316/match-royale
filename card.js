@@ -5,7 +5,7 @@ function Card(frontImage, parentObj){
     this.renderedElement = null;
 
     this.render = function(){
-        var card = $("div",{
+        var card = $("<div>",{
             class: 'card'
         });
         card.click(this.handleClick);
