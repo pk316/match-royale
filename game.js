@@ -33,7 +33,7 @@ function MemoryGame(){
             this.cardsClicked.push(cardObjClicked);
             cardObjClicked.revealCard();
         }
-        if (this.cardsClicked === 2){
+        if (this.cardsClicked.length === 2){
             if(this.cardsClicked[0].getId() === this.cardsClicked[1].getId()){
                 console.log('match!!!!!');
                 this.matchCount += 2;
