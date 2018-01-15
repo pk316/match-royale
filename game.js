@@ -29,7 +29,7 @@ function MemoryGame(){
     }
     this.handleCardClick = function(cardObjClicked){
 
-        if(this.cardsClicked<2){
+        if(this.cardsClicked.length<2){
             this.cardsClicked.push(cardObjClicked);
             cardObjClicked.revealCard();
         }
