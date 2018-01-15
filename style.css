@@ -16,7 +16,6 @@
     position: relative;
     left: 10%;
     top: -8%;
-    font-size: 0;
 }
 
 .game-nav {
@@ -53,13 +52,11 @@
     position: absolute;
     left: 0 ;
     top: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
-    background-size: contain;
-    background-position: middle;
-    background-repeat: no-repeat;
 }
-
 .back{
-    background-image: url('images/card.jpg');
+    background-image: url('images/card.png');  
 }
