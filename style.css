@@ -58,8 +58,8 @@
 .front{
     width: 80%;
     height: 80%;
-    top: 5%;
-    left: 5%;
+    top: 7%;
+    left: 7%;
 }
 .back{
     background-image: url('images/backCard.png');  
