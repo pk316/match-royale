@@ -1,26 +1,30 @@
 function Card(frontImage, parentObj) {
     this.frontImage = frontImage;
     this.parent = parentObj;
-    this.revealed = false;
-    this.renderedElement = null;
+    // this.revealed = false;
+    // this.renderedElement = null;
 
     this.render = function () {
-        var card = $("<div>", {
+        var card = $('<div>', {
             class: 'card'
         });
-        card.click(this.handleClick.bind(this));
-        var front = $("<div>", {
+        var front = $('<div>', {
             class: 'front',
             css: {
-                backgroundImage: `url(${this.frontImage})`
+                backgroundImage: `url(${this.frontImage})`,
+                minHeight: '135px',
+                minWidth: '135px',
+                maxHeight: '135px',
+                maxWidth: '135px'
             }
         });
-        var back = $("<div>", {
+        var back = $('<div>', {
             class: 'back',
         })
+        card.click(this.handleClick.bind(this));
         this.renderedBack = back;
         card.append(front, back);
-        this.renderedElement = card;
+        this.card = card;
         return card;
     }
 
@@ -30,9 +34,11 @@ function Card(frontImage, parentObj) {
     }
 
     this.revealCard = function () {
+        this.card.toggleClass('flip');
         this.renderedBack.hide();
     }
     this.hideCard = function () {
+        this.card.toggleClass('flip');
         this.renderedBack.show();
     }
     this.getId = function () {

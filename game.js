@@ -20,7 +20,7 @@ function MemoryGame(){
         'images/musketeer.png',
         'images/princess.png',
         'images/skeleton.png',
-        'images/valkrie.png',
+        'images/valkyrie.png',
         'images/witch.png'
     ];
     this.initGame = function () {
@@ -67,7 +67,7 @@ function MemoryGame(){
                 }
                 this.clearCardsClicked();
             } else {
-                setTimeout(this.resetCardsClicked.bind(this), 1000);
+                setTimeout(this.resetCardsClicked.bind(this), 2000);
             }
         }
 
