@@ -21,7 +21,7 @@
 .game-logo {
     align-self: center;
     height: 12vmin;
-    width: 10vmin;
+    width: 12vmin;
     background-image: url('images/logo.png');
     background-size: contain;
     background-repeat: no-repeat;
