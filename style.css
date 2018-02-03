@@ -47,7 +47,7 @@
     animation: animate-title 1.5s;
 }
 
-@keyframes animate-title {
+/* @keyframes animate-title {
     0% {
         opacity: .1;
         transform: translateX(-100px) rotate(0deg);
@@ -66,16 +66,24 @@
     100% {
         transform: translate(0);
     }
-}
+} */
+
 
 .stats{
    display: flex;
    flex-direction: row;
    justify-content: space-between;
-   width: 40vw;
+   color: white;
+   font-family: "bungee",sans-serif;
+   text-shadow: 
+        -1px 0 black,
+        0 2px black,
+        2px 0 black,
+        0 -2px black;
+   width: 50vw;
    padding-top: 3vh;
-   font-size: 2vmax;
-   font-weight: 700;
+   font-size: 1.7vmax;
+   font-weight: 900;
    animation: animate-stats 1.5s ease-in;
 }
 .stats .value {
@@ -132,15 +140,21 @@
     font-size: 2vh;
 }
 .reset{
-    font-size: 15px;
-    font-weight: 700;
-    background-color: green;
+    font-family: "bungee",sans-serif;
+    font-size: 1.7vmax;
+    font-weight: 400;
+    color: white;
+    text-shadow : 
+       -1px 0 black,
+       0 2px black,
+       2px 0 black,
+       0 -1px black;
+    background-color: grey;
     border: 2px solid black;
-    border-radius: 100px;
+    border-radius: 50px;
     padding: 5px 10px;
     transition: all .2sec;
 }
-
 
 .reset:hover {
     transform: translateY(-3px);
@@ -204,6 +218,10 @@
     #game-area {
         height: 25vh;
         width: 65vw;
+    }
+    .stats {
+        display: flex;
+        flex-direction: column;
     }
 }
 @media screen and (min-height: 320px) and (orientation: landscape) {
