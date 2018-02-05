@@ -60,22 +60,23 @@ function MemoryGame(){
             }
             this.cardsClickedArray.push(cardClicked);
             cardClicked.revealCard();
-        }
-        if (this.cardsClickedArray.length === 2){
-            if(this.cardsClickedArray[0].getId() === this.cardsClickedArray[1].getId()){
-                console.log('match!!!!!');
-                this.attempts++
-                this.matchCount += 2;
-                this.matchCounter++;
-                this.calulateAccuracy();
-                if(this.matchCount === this.cards.length){
-                    this.winner();
+
+            if (this.cardsClickedArray.length === 2){
+                if(this.cardsClickedArray[0].getId() === this.cardsClickedArray[1].getId()){
+                    console.log('match!!!!!');
+                    this.attempts++
+                    this.matchCount += 2;
+                    this.matchCounter++;
+                    this.calulateAccuracy();
+                    if(this.matchCount === this.cards.length){
+                        this.winner();
+                    }
+                    this.clearCardsClicked();
+                } else {
+                    setTimeout(this.resetCardsClicked.bind(this), 1000);
+                    this.attempts++
+                    this.calulateAccuracy();
                 }
-                this.clearCardsClicked();
-            } else {
-                setTimeout(this.resetCardsClicked.bind(this), 1000);
-                this.attempts++
-                this.calulateAccuracy();
             }
         }
 
