@@ -4,27 +4,27 @@ function MemoryGame(){
     this.matchCounter =0;
     this.attempts = 0;
     this.imageArray = [
-        'images/barb.png',
-        'images/bomber.png',
-        'images/giant.png',
-        'images/goblin.png',
-        'images/hog.png',
-        'images/iceWizard.png',
-        'images/pekka.png',
-        'images/prince.png',
-        'images/wizard.png',
-        'images/archer.png',
-        'images/dragon.png',
-        'images/electroWiz.png',
-        'images/golem.png',
-        'images/knight.png',
-        'images/lumberjack.png',
-        'images/miniPekka.png',
-        'images/musketeer.png',
-        'images/princess.png',
-        'images/skeleton.png',
-        'images/valkyrie.png',
-        'images/witch.png'
+        'assets/images/barb.png',
+        'assets/images/bomber.png',
+        'assets/images/giant.png',
+        'assets/images/goblin.png',
+        'assets/images/hog.png',
+        'assets/images/iceWizard.png',
+        'assets/images/pekka.png',
+        'assets/images/prince.png',
+        'assets/images/wizard.png',
+        'assets/images/archer.png',
+        'assets/images/dragon.png',
+        'assets/images/electroWiz.png',
+        'assets/images/golem.png',
+        'assets/images/knight.png',
+        'assets/images/lumberjack.png',
+        'assets/images/miniPekka.png',
+        'assets/images/musketeer.png',
+        'assets/images/princess.png',
+        'assets/images/skeleton.png',
+        'assets/images/valkyrie.png',
+        'assets/images/witch.png'
     ];
     this.initGame = function () {
         var newImageArray = this.selectRandomImages(this.imageArray);
