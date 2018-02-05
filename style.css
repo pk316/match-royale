@@ -12,6 +12,20 @@
     justify-content: flex-start; 
     align-items: center;
 }
+@keyframes rattle
+{
+  0% { margin-top: 0; margin-left: 0; }
+  10% { margin-top: -5px; margin-left: 0; }
+  20% { margin-top: 0; margin-left: -5px; }
+  30% { margin-top: 5px; margin-left: 0; }
+  40% { margin-top: 0; margin-left: 5px; }
+  50% { margin-top: -2px; margin-left: 0; }
+  60% { margin-top: 0; margin-left: -2px; }
+  70% { margin-top: 2px; margin-left: 0; }
+  80% { margin-top: 0; margin-left: 2px; }
+  90% { margin-top: -1px; margin-left: 0; }
+  100% { margin-top: 0; margin-left: 0; }
+}
 .game-head {
     display: flex;
     font-family: "bungee", sans-serif;
@@ -43,8 +57,73 @@
     text-align: center;
     font-family: "bungee", sans-serif;
     font-size: 9vmin;
-    animation: animate-title 1.5s;
+    animation : slam 1s;
 }
+/* #head-1 {
+    animation: slam 1s;
+}
+#head-2 {
+    animation: slam 1s .2s;
+}
+#head-3 {
+    animation: slam 1s .4s;
+}
+#head-4 {
+    animation: slam 1s .6s;
+}
+#head-5 {
+    animation: slam 1s .8s;
+}
+
+#head-6 {
+    animation: slam 1s 1s;
+}
+
+#head-7 {
+    animation: slam 1s 1.2s;
+}
+
+#head-8 {
+    animation: slam 1s 1.4s;
+}
+
+#head-9 {
+    animation: slam 1s 1.6s;
+}
+
+#head-10 {
+    animation: slam 1s 1.8s;
+}
+
+#head-11 {
+    animation: slam 1s 2s;
+}
+
+#head-12 {
+    animation: slam 1s 2.2s;
+} */
+@keyframes title {
+    0%{
+        transform: translateX(-100vw);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes slam {
+    0% {
+        transform: scale(10, 10);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
 
 /* @keyframes animate-title {
     0% {
@@ -173,6 +252,18 @@
     cursor: pointer;
     transform-style: preserve-3d;
     transition: .5s;
+}
+
+.card:hover {
+    animation: hover.15s 
+}
+@keyframes hover{
+    0%{
+        transform: translateY(15px)
+    }
+    100%{
+        transform: translateY(0)
+    }
 }
 
 .front, .back {
