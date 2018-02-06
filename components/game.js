@@ -62,12 +62,13 @@ function MemoryGame(){
             cardClicked.revealCard();
 
             if (this.cardsClickedArray.length === 2){
-                if(this.cardsClickedArray[0].getId() === this.cardsClickedArray[1].getId()){
+                if(this.cardsClickedArray[0].checkId() === this.cardsClickedArray[1].checkId()){
                     console.log('match!!!!!');
                     this.attempts++
                     this.matchCount += 2;
                     this.matchCounter++;
                     this.calulateAccuracy();
+                    this.matchCards();
                     if(this.matchCount === this.cards.length){
                         this.winner();
                     }
@@ -78,6 +79,13 @@ function MemoryGame(){
                     this.calulateAccuracy();
                 }
             }
+        }
+
+        this.matchCards = function () {
+            console.log('match function')
+            $('.reveal').addClass('match').fadeTo(1000, 0, function () {
+                $('.match').removeClass('flip-card, reveal');
+            });
         }
 
         this.winner = function(){
@@ -95,7 +103,6 @@ function MemoryGame(){
         };
         this.displayStats();
     }
-
 
     this.calulateAccuracy = function () {
         this.accuracy = (this.matchCounter / this.attempts * 100).toFixed(0);

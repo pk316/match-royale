@@ -35,7 +35,7 @@
     align-self: center;
     height: 12vmin;
     width: 12vmin;
-    background-image: url('images/logo.png');
+    background-image: url('assets/images/logo.png');
     background-size: contain;
     background-repeat: no-repeat;
     animation: animate-logo .5s ease-in 1s;
@@ -290,6 +290,18 @@
     -moz-transform: rotateX(360deg);
     -o-transform: rotateX(360deg);
     -ms-transform: rotateX(360deg);
+}
+.match {
+    animation: remove 2s;
+}
+@keyframes remove {
+    0%{
+        opacity : 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(360deg)
+    }
 }
 
 @media screen and (min-width: 270px) and (orientation: portrait) {
