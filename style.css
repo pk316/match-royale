@@ -53,55 +53,13 @@
 }
 
 .game-title {
-    align-self: flex-start;
+    align-self: space-around;
     text-align: center;
     font-family: "bungee", sans-serif;
     font-size: 9vmin;
     animation : slam 1s;
 }
-/* #head-1 {
-    animation: slam 1s;
-}
-#head-2 {
-    animation: slam 1s .2s;
-}
-#head-3 {
-    animation: slam 1s .4s;
-}
-#head-4 {
-    animation: slam 1s .6s;
-}
-#head-5 {
-    animation: slam 1s .8s;
-}
 
-#head-6 {
-    animation: slam 1s 1s;
-}
-
-#head-7 {
-    animation: slam 1s 1.2s;
-}
-
-#head-8 {
-    animation: slam 1s 1.4s;
-}
-
-#head-9 {
-    animation: slam 1s 1.6s;
-}
-
-#head-10 {
-    animation: slam 1s 1.8s;
-}
-
-#head-11 {
-    animation: slam 1s 2s;
-}
-
-#head-12 {
-    animation: slam 1s 2.2s;
-} */
 @keyframes title {
     0%{
         transform: translateX(-100vw);
@@ -322,7 +280,7 @@
         width: 65vw;
     }
     .stats {
-        display: flex;
+        display: inline-flex;
         flex-direction: column;
     }
 }

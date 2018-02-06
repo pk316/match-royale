@@ -132,7 +132,7 @@ function MemoryGame(){
     this.resetGame = function() {
         $("#game-area").html('');
         this.resetStats();
-        this.createCards(this.shuffleCards(this.gameTypes[this.currentGame]));
+        this.createCards();
     };
     
     this.handleReset = function() {
