@@ -12,20 +12,7 @@
     justify-content: flex-start; 
     align-items: center;
 }
-@keyframes rattle
-{
-  0% { margin-top: 0; margin-left: 0; }
-  10% { margin-top: -5px; margin-left: 0; }
-  20% { margin-top: 0; margin-left: -5px; }
-  30% { margin-top: 5px; margin-left: 0; }
-  40% { margin-top: 0; margin-left: 5px; }
-  50% { margin-top: -2px; margin-left: 0; }
-  60% { margin-top: 0; margin-left: -2px; }
-  70% { margin-top: 2px; margin-left: 0; }
-  80% { margin-top: 0; margin-left: 2px; }
-  90% { margin-top: -1px; margin-left: 0; }
-  100% { margin-top: 0; margin-left: 0; }
-}
+
 .game-head {
     display: flex;
     font-family: "bungee", sans-serif;
@@ -38,17 +25,16 @@
     background-image: url('assets/images/logo.png');
     background-size: contain;
     background-repeat: no-repeat;
-    animation: animate-logo .5s ease-in 1s;
+    animation: animate-logo 1s ease-in .5s, rattle 1s 1.5s;
     animation-fill-mode: backwards;
-    /* backface-visibility: hidden; */
 }
 
 @keyframes animate-logo {
     0% {
-        transform: translateX(110vw)
+        transform: translateX(110vw) rotateY(360deg)
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(0) rotate(0);
     }
 }
 
@@ -57,7 +43,21 @@
     text-align: center;
     font-family: "bungee", sans-serif;
     font-size: 9vmin;
-    animation : slam 1s;
+    animation : slam 1s ease-in-out;
+}
+
+@keyframes rattle {
+    0% { margin-top: 0; margin-left: 0;}
+    10% { margin-top: -15px; margin-left: 0;}
+    20% {margin-top: 0; margin-left: -15px;}
+    30% {margin-top: 15px; margin-left: 0;}
+    40% {margin-top: 0; margin-left: 5px;}
+    50% {margin-top: -12px; margin-left: 0;}
+    60% {margin-top: 0; margin-left: -12px;}
+    70% {margin-top: 12px; margin-left: 0;}
+    80% {margin-top: 0; margin-left: 12px;}
+    90% {margin-top: -11px; margin-left: 0;}
+    100% {margin-top: 0; margin-left: 0;}
 }
 
 @keyframes title {
@@ -68,6 +68,7 @@
         transform: translateX(0);
     }
 }
+
 @keyframes slam {
     0% {
         transform: scale(10, 10);
@@ -81,7 +82,6 @@
         opacity: 1;
     }
 }
-
 
 /* @keyframes animate-title {
     0% {
@@ -104,7 +104,6 @@
     }
 } */
 
-
 .stats{
    display: flex;
    flex-direction: row;
@@ -122,6 +121,7 @@
    font-weight: 900;
    animation: animate-stats 1.5s ease-in;
 }
+
 .stats .value {
     text-align: center;
 }
@@ -143,21 +143,12 @@
 #game-area{
     width: 60vw;
     height: 50vh;
-    /* border: 5px solid black; */
     position: relative;
-    /* left: 10%; */
     top: 5%;
     animation: animate-game-area 1.5s ease-out;
     display: flex;
     flex-flow: row wrap;
-     /* justify-content: center;
-     align-items: center; */
 }
-/* #game-area > div {
-    justify-content: center;
-    align-items: center;
-
-} */
 
 @keyframes animate-game-area {
     0% {
@@ -204,9 +195,6 @@
 
 .card{
     width: 16%;
-    /* height: 32%; */
-    /* position: relative;
-    float: left; */
     cursor: pointer;
     transform-style: preserve-3d;
     transition: .5s;
@@ -215,6 +203,7 @@
 .card:hover {
     animation: hover.15s 
 }
+
 @keyframes hover{
     0%{
         transform: translateY(15px)
@@ -235,13 +224,16 @@
     transition: 0.5s;
     transform-style: preserve-3d;
 }
+
 .front{
     top: 4%;
     left: 7%;
 }
+
 .back{
     background-image: url('assets/images/backCard.png');  
 }
+
 .flip-card {
     transform: rotateX(360deg);
     -webkit-transform: rotateX(360deg);
@@ -249,18 +241,20 @@
     -o-transform: rotateX(360deg);
     -ms-transform: rotateX(360deg);
 }
+
 .match {
     animation: remove 2s;
 }
+
 @keyframes remove {
     0%{
         opacity : 1;
     }
     100%{
-        /* opacity: 0; */
         transform: rotate(360deg)
     }
 }
+
 .matched {
     visibility: hidden;
 }
@@ -271,12 +265,14 @@
         padding-top: 10%;
     }
 }
+
 @media screen and (min-height: 360px) and (orientation: landscape) {
     #game-area {
         height: 30vh;
         width: 40vw;
     }
 }
+
 @media screen and (min-height: 568px) and (orientation: portrait) {
     #game-area {
         height: 25vh;
@@ -287,17 +283,20 @@
         flex-direction: column;
     }
 }
+
 @media screen and (min-height: 320px) and (orientation: landscape) {
     #game-area {
         height: 40vh;
         width: 40vw;
     }
 }
+
 @media screen and (min-width: 1024px) and (orientation: landscape) {
     #game-area {
         height: 35vh;
     }
 }
+
 @media screen and (min-width: 1280px) and (orientation: landscape) {
     #game-area {
         height: 45vh;
