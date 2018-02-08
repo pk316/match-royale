@@ -25,7 +25,15 @@ function MemoryGame(){
         'assets/images/princess.png',
         'assets/images/skeleton.png',
         'assets/images/valkyrie.png',
-        'assets/images/witch.png'
+        'assets/images/witch.png',
+        'assets/images/balloon.png',
+        'assets/images/bats.png',
+        'assets/images/minions.png',
+        'assets/images/bowler.png',
+        'assets/images/bandit.png',
+        'assets/images/hunter.png',
+        'assets/images/sparky.png',
+        'assets/images/megaknight.png'
     ];
     this.initGame = function () {
         this.createGame();
