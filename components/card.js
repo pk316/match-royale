@@ -33,14 +33,16 @@ function Card(front, cardClicked) {
 
     this.revealCard = function () {
         this.card.toggleClass('flip-card');
-        this.renderedFront.addClass('reveal').show()
+        this.renderedFront.toggleClass('reveal').show()
         this.renderedBack.hide();
     }
 
     this.hideCard = function () {
-        this.card.toggleClass('flip-card');
-        this.card.toggleClass('revealed');
+        this.card.removeClass('flip-card');
         this.renderedFront.removeClass('reveal').hide();
         this.renderedBack.show();
+    }
+    this.handleMatchCard = function () {
+        this.card.css("visibility", "hidden");
     }
 }

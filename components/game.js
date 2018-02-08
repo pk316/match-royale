@@ -53,7 +53,6 @@ function MemoryGame(){
         return cardCreatedArray;
     }
     this.handleCardClick = function(cardClicked){
-        console.log('card clicked', this)
         if(this.cardsClickedArray.length<2){
             if (this.cardsClickedArray[0] === cardClicked) {
                 return;
@@ -71,8 +70,8 @@ function MemoryGame(){
                     this.matchCards();
                     if(this.matchCount === this.cards.length){
                         this.winner();
-                    }
-                    this.clearCardsClicked();
+                    }    
+                    setTimeout(this.handleMatch.bind(this), 1000);
                 } else {
                     setTimeout(this.resetCardsClicked.bind(this), 1000);
                     this.attempts++
@@ -80,12 +79,17 @@ function MemoryGame(){
                 }
             }
         }
+        this.handleMatch = function () {
+            for (var i = 0; i < this.cardsClickedArray.length; i++) {
+                this.cardsClickedArray[i].handleMatchCard();
+            }
+            this.clearCardsClicked();
+        }
 
         this.matchCards = function () {
             console.log('match function')
-            $('.reveal').addClass('match').fadeTo(1000, 0, function () {
-                $('.match').removeClass('flip-card, reveal');
-            });
+            $('.reveal').addClass('match').fadeTo(1000, 0)
+    
         }
 
         this.winner = function(){

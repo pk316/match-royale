@@ -257,9 +257,12 @@
         opacity : 1;
     }
     100%{
-        opacity: 0;
+        /* opacity: 0; */
         transform: rotate(360deg)
     }
+}
+.matched {
+    visibility: hidden;
 }
 
 @media screen and (min-width: 270px) and (orientation: portrait) {
