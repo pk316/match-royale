@@ -28,11 +28,14 @@ function MemoryGame(){
         'assets/images/witch.png'
     ];
     this.initGame = function () {
+        this.createGame();
+        this.handleResetClick();
+    };
+    this.createGame = function (){
         var newImageArray = this.selectRandomImages(this.imageArray);
         var images = newImageArray.concat(newImageArray);
         this.cards = this.createCards(images)
-        this.handleResetClick();
-    };
+    }
     this.selectRandomImages = function(imageArray) {
         var randomImageArray = [];
         while ( randomImageArray.length < 9 ) {
@@ -86,16 +89,12 @@ function MemoryGame(){
             }
             this.clearCardsClicked();
         }
-
         this.matchCards = function () {
             $('.reveal').addClass('match').fadeTo(1000, 0)
-    
         }
-
         this.winner = function(){
             alert('you win!');
         }
-        
         this.resetCardsClicked = function () {
             for (var i = 0; i < this.cardsClickedArray.length; i++) {
                 this.cardsClickedArray[i].hideCard();
@@ -107,28 +106,23 @@ function MemoryGame(){
     this.clearCardsClicked = function () {
         this.cardsClickedArray = [];
     };
-
     this.calulateAccuracy = function () {
         this.accuracy = (this.matchCounter / this.attempts * 100).toFixed(0);
         return this.accuracy;
     };
-
     this.updateStats= function() {
         $('.attempts .value').text(this.attempts);
+        $('.games-played .value').text(this.gamesPlayed);
         if (this.accuracy === undefined){
             $('.accuracy .value').text(this.accuracy);
         }else {
             $('.accuracy .value').text(this.accuracy+'%');
         }
     };
-
     this.handleResetClick = function () {
-        console.log('reset1')
         $('.reset').click(this.resetGame.bind(this));
     };
-
     this.resetStats = function() {
-        console.log('reset3')
         this.gamesPlayed++;
         this.matchCount = 0;
         this.matchCounter = 0;
@@ -137,14 +131,10 @@ function MemoryGame(){
         this.updateStats();
         this.clearCardsClicked();
     };
-
     this.resetGame = function() {
-        console.log('reset2')
         $("#game-area").html('');
         this.resetStats();
-        var newImageArray = this.selectRandomImages(this.imageArray);
-        var images = newImageArray.concat(newImageArray);
-        this.cards = this.createCards(images)
+        this.createGame();
     };  
 }
 
