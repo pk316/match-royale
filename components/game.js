@@ -2,6 +2,7 @@ function MemoryGame(){
     this.cardsClickedArray = [];
     this.matchCount =0;
     this.matchCounter =0;
+    this.gamesPlayed =0;
     this.attempts = 0;
     this.imageArray = [
         'assets/images/barb.png',
@@ -30,6 +31,7 @@ function MemoryGame(){
         var newImageArray = this.selectRandomImages(this.imageArray);
         var images = newImageArray.concat(newImageArray);
         this.cards = this.createCards(images)
+        this.handleResetClick();
     };
     this.selectRandomImages = function(imageArray) {
         var randomImageArray = [];
@@ -100,18 +102,18 @@ function MemoryGame(){
             }
             this.clearCardsClicked();
         };
-        this.clearCardsClicked = function () {
-            this.cardsClickedArray = [];
-        };
-        this.displayStats();
+        this.updateStats();
     }
+    this.clearCardsClicked = function () {
+        this.cardsClickedArray = [];
+    };
 
     this.calulateAccuracy = function () {
         this.accuracy = (this.matchCounter / this.attempts * 100).toFixed(0);
         return this.accuracy;
     };
 
-    this.displayStats= function() {
+    this.updateStats= function() {
         $('.attempts .value').text(this.attempts);
         if (this.accuracy === undefined){
             $('.accuracy .value').text(this.accuracy);
@@ -120,25 +122,29 @@ function MemoryGame(){
         }
     };
 
+    this.handleResetClick = function () {
+        console.log('reset1')
+        $('.reset').click(this.resetGame.bind(this));
+    };
 
     this.resetStats = function() {
+        console.log('reset3')
+        this.gamesPlayed++;
         this.matchCount = 0;
         this.matchCounter = 0;
         this.attempts = 0;
         this.accuracy = 0;
-        this.cardList = [];
-        this.displayStats();
-        this.clearClickedCardsList();
+        this.updateStats();
+        this.clearCardsClicked();
     };
 
     this.resetGame = function() {
+        console.log('reset2')
         $("#game-area").html('');
         this.resetStats();
-        this.createCards();
-    };
-    
-    this.handleReset = function() {
-        $('.reset').click(this.resetGame.bind(this));
-    };
+        var newImageArray = this.selectRandomImages(this.imageArray);
+        var images = newImageArray.concat(newImageArray);
+        this.cards = this.createCards(images)
+    };  
 }
 
