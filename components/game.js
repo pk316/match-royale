@@ -62,7 +62,6 @@ function MemoryGame(){
 
             if (this.cardsClickedArray.length === 2){
                 if(this.cardsClickedArray[0].checkId() === this.cardsClickedArray[1].checkId()){
-                    console.log('match!!!!!');
                     this.attempts++
                     this.matchCount += 2;
                     this.matchCounter++;
@@ -87,7 +86,6 @@ function MemoryGame(){
         }
 
         this.matchCards = function () {
-            console.log('match function')
             $('.reveal').addClass('match').fadeTo(1000, 0)
     
         }
