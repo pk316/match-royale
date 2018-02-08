@@ -33,7 +33,7 @@ function MemoryGame(){
         'assets/images/bandit.png',
         'assets/images/hunter.png',
         'assets/images/sparky.png',
-        'assets/images/megaknight.png'
+        'assets/images/megaKnight.png'
     ];
     this.initGame = function () {
         this.createGame();
