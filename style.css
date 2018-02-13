@@ -44,16 +44,16 @@
     animation : slam 1s ease-in-out;
 }
 @keyframes rattle {
-    0% { margin-top: 0; margin-left: 0;}
-    10% { margin-top: -15px; margin-left: 0;}
-    20% {margin-top: 0; margin-left: -15px;}
-    30% {margin-top: 15px; margin-left: 0;}
-    40% {margin-top: 0; margin-left: 5px;}
-    50% {margin-top: -12px; margin-left: 0;}
-    60% {margin-top: 0; margin-left: -12px;}
-    70% {margin-top: 12px; margin-left: 0;}
-    80% {margin-top: 0; margin-left: 12px;}
-    90% {margin-top: -11px; margin-left: 0;}
+    0% {margin-top: 0; margin-left: 0;}
+    10% {margin-top: -20px; margin-left: 0;}
+    20% {margin-top: 0; margin-left: -20px;}
+    30% {margin-top: 20px; margin-left: 0;}
+    40% {margin-top: 0; margin-left: 20px;}
+    50% {margin-top: -20px; margin-left: 0;}
+    60% {margin-top: 0; margin-left: -20px;}
+    70% {margin-top: 20px; margin-left: 0;}
+    80% {margin-top: 0; margin-left: 20px;}
+    90% {margin-top: -10px; margin-left: 0;}
     100% {margin-top: 0; margin-left: 0;}
 }
 @keyframes title {
