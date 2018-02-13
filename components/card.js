@@ -28,7 +28,7 @@ function Card(front, cardClicked) {
     }
 
     this.checkId = function () {
-        return this.front;
+        return this.front['0'];
     }
 
     this.revealCard = function () {
