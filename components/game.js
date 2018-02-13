@@ -42,13 +42,14 @@ function MemoryGame(){
     };
 
     this.createGame = function() {
-        var newImageArray = this.selectRandomImages(this.imageArray);
+        var imageArray = this.imageArray.slice();
+        var newImageArray = this.selectRandomImages(imageArray);
         var images = newImageArray.concat(newImageArray);
-        var shuffledImages = this.shuffleArray(images);
+        var shuffledImages = this.shuffle(images);
         this.cards = this.createCards(shuffledImages);
     }
 
-    this.shuffleArray = function(images) {
+    this.shuffle = function(images) {
         var shuffled = []
         while (images.length) {
             var image = images.splice(this.randomNum(images), 1)
@@ -59,7 +60,7 @@ function MemoryGame(){
 
     this.selectRandomImages = function(imageArray) {
         var randomImageArray = [];
-        while ( randomImageArray.length < 9 ) {
+        while (randomImageArray.length < 9) {
             var randomImage = imageArray.splice(this.randomNum(imageArray), 1)
             randomImageArray.push(randomImage);
         }
@@ -98,7 +99,7 @@ function MemoryGame(){
                     this.calulateAccuracy();
                     this.matchCards();
                     if(this.matchCount === this.cards.length){
-                        this.winner();
+                        setTimeout(this.winner.bind(this), 1000);
                     }    
                     setTimeout(this.handleMatch.bind(this), 1000);
                 } else {
@@ -191,4 +192,3 @@ function MemoryGame(){
         this.resetGame();
     }
 }
-
