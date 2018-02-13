@@ -42,25 +42,34 @@ function MemoryGame(){
     this.createGame = function (){
         var newImageArray = this.selectRandomImages(this.imageArray);
         var images = newImageArray.concat(newImageArray);
-        this.cards = this.createCards(images)
+        var shuffledImages = this.shuffleArray(images);
+        this.cards = this.createCards(shuffledImages);
+    }
+    this.shuffleArray = function(images) {
+        var shuffled = []
+        while (images.length) {
+            var image = images.splice(this.randomNum(images), 1)
+            shuffled.push(image);
+        }
+        return shuffled;
     }
     this.selectRandomImages = function(imageArray) {
         var randomImageArray = [];
         while ( randomImageArray.length < 9 ) {
-            var randomImage = imageArray.splice(this.randomNum(), 1)
+            var randomImage = imageArray.splice(this.randomNum(imageArray), 1)
             randomImageArray.push(randomImage);
         }
         return randomImageArray;
     }
-    this.randomNum = function (){
-        return Math.floor(Math.random() * this.imageArray.length)
+    this.randomNum = function (array){
+        return Math.floor(Math.random() * array.length)
     }
     this.createCards = function(images){
         var cardCreatedArray = [];
         for ( var i = 0; i < images.length; i++){
             var newCard = new Card(images[i], this);
             var cardDom = newCard.render();
-            $("#game-area").append(cardDom);
+            $('#game-area').append(cardDom);
             cardCreatedArray.push(newCard);
         }
         return cardCreatedArray;
@@ -101,7 +110,7 @@ function MemoryGame(){
             $('.reveal').addClass('match').fadeTo(1000, 0)
         }
         this.winner = function(){
-            alert('you win!');
+            this.playerWins();
         }
         this.resetCardsClicked = function () {
             for (var i = 0; i < this.cardsClickedArray.length; i++) {
@@ -140,9 +149,30 @@ function MemoryGame(){
         this.clearCardsClicked();
     };
     this.resetGame = function() {
-        $("#game-area").html('');
+        $('#game-area').html('');
         this.resetStats();
         this.createGame();
     };  
+
+    this.playerWins = function () {
+        this.winnerModal();
+    }
+
+
+
+    this.winnerModal = function () {
+        $('.modal').show();
+        this.handleCloseX();
+    }
+
+    this.handleCloseX = function () {
+        $('.close').click(this.closeModal.bind(this));
+    }
+
+    this.closeModal= function () {
+        $('.modal').hide();
+        this.resetGame();
+    }
+
 }
 
