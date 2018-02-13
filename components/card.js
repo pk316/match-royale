@@ -42,7 +42,8 @@ function Card(front, cardClicked) {
         this.renderedFront.removeClass('reveal').hide();
         this.renderedBack.show();
     }
+
     this.handleMatchCard = function () {
-        this.card.css("visibility", "hidden");
+        this.card.addClass('matched')
     }
 }

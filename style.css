@@ -109,7 +109,6 @@
     80% {
         transform: translateX(120px)
     }
-
     100% {
          transform: translateX(0)
     }
@@ -207,6 +206,19 @@
 .match {
     animation: remove 2s;
 }
+@keyframes remove {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+.matched {
+    visibility: hidden;
+}
+
+/************* Modal content *************/
 .modal {
     display: none;
     position: fixed;
@@ -217,8 +229,6 @@
     height: 100%;
     overflow: none;
 }
-
-/************* Modal content *************/
 .modal-content {
     font-family: "bungee", sans-serif;
     font-size: 5vmax;
@@ -247,17 +257,6 @@
 }
 
 /************* Media Queries *************/
-@keyframes remove {
-    0%{
-        opacity : 1;
-    }
-    100%{
-        transform: rotate(360deg)
-    }
-}
-.matched {
-    visibility: hidden;
-}
 @media screen and (min-width: 270px) and (orientation: portrait) {
     #game-area {
         height: 25vh;
