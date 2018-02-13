@@ -87,14 +87,17 @@
    font-family: "bungee",sans-serif;
    text-shadow: 
         -1px 0 black,
-        0 2px black,
-        2px 0 black,
-        0 -2px black;
+        0 1px black,
+        2px 2px black,
+        1px -1px black;
    width: 50vw;
    padding-top: 3vh;
    font-size: 1.7vmax;
    font-weight: 900;
    animation: animate-stats 1.5s ease-in;
+}
+.stats > div {
+    padding: 2%;
 }
 .stats .value {
     text-align: center;
@@ -275,6 +278,15 @@
     .stats {
         display: inline-flex;
         flex-direction: column;
+    }
+    .games-played > div,
+    .attempts > div,
+    .accuracy > div
+    {
+        display: inline-block;
+    }
+    .stats .value {
+        float: right;
     }
 }
 @media screen and (min-height: 320px) and (orientation: landscape) {
