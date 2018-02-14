@@ -177,7 +177,6 @@ function MemoryGame(){
         this.winnerModal();
     }
 
-
     this.winnerModal = function() {
         $('.modal').show();
         this.closeButton();
