@@ -13,10 +13,14 @@
 }
 
 /************* Header content *************/
+/************* Header content *************/
+/************* Header content *************/
+
 .game-head {
     display: flex;
     font-family: "bungee", sans-serif;
 }
+
 .game-logo {
     align-self: center;
     height: 12vmin;
@@ -27,6 +31,7 @@
     animation: animate-logo 1s ease-in .5s, rattle 1s 1.5s;
     animation-fill-mode: backwards;
 }
+
 @keyframes animate-logo {
     0% {
         transform: translateX(110vw) rotateY(360deg)
@@ -35,6 +40,7 @@
         transform: translateX(0) rotate(0);
     }
 }
+
 .game-title {
     align-self: space-around;
     text-align: center;
@@ -42,6 +48,7 @@
     font-size: 9vmin;
     animation : slam 1s ease-in-out;
 }
+
 @keyframes rattle {
     0% {margin-top: 0; margin-left: 0;}
     10% {margin-top: -20px; margin-left: 0;}
@@ -55,6 +62,7 @@
     90% {margin-top: -10px; margin-left: 0;}
     100% {margin-top: 0; margin-left: 0;}
 }
+
 @keyframes title {
     0%{
         transform: translateX(-100vw);
@@ -63,6 +71,7 @@
         transform: translateX(0);
     }
 }
+
 @keyframes slam {
     0% {
         transform: scale(10, 10);
@@ -78,6 +87,9 @@
 }
 
 /************* Main content *************/
+/************* Main content *************/
+/************* Main content *************/
+
 .stats{
    display: flex;
    flex-direction: row;
@@ -95,12 +107,15 @@
    font-weight: 900;
    animation: animate-stats 1.5s ease-in;
 }
+
 .stats > div {
     padding: 2%;
 }
+
 .stats .value {
     text-align: center;
 }
+
 @keyframes animate-stats {
     0% {
         transform: translateX(-200px)
@@ -112,6 +127,7 @@
          transform: translateX(0)
     }
 }
+
 #game-area{
     width: 60vw;
     height: 50vh;
@@ -121,6 +137,7 @@
     display: flex;
     flex-flow: row wrap;
 }
+
 @keyframes animate-game-area {
     0% {
         transform: rotateX(-90deg)
@@ -129,6 +146,7 @@
         transform: rotateX(0)
     }
 }
+
 .game-nav {
     text-align: center;
     list-style-type: none;
@@ -136,6 +154,7 @@
     padding-top: 0.5%;
     font-size: 2vh;
 }
+
 .reset{
     font-family: "bungee",sans-serif;
     font-size: 1.7vmax;
@@ -152,23 +171,28 @@
     padding: 5px 10px;
     transition: all .2sec;
 }
+
 .reset:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
 }
+
 .reset:active {
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
 }
+
 .card{
     width: 16%;
     cursor: pointer;
     transform-style: preserve-3d;
     transition: .5s;
 }
+
 .card:hover {
     animation: hover.15s 
 }
+
 @keyframes hover{
     0%{
         transform: translateY(15px)
@@ -177,6 +201,7 @@
         transform: translateY(0)
     }
 }
+
 .front, .back {
     position: absolute;
     left: 0 ;
@@ -188,13 +213,16 @@
     transition: 0.5s;
     transform-style: preserve-3d;
 }
+
 .front{
     top: 4%;
     left: 7%;
 }
+
 .back{
     background-image: url('assets/images/backCard.png');  
 }
+
 .flip-card {
     transform: rotateX(360deg);
     -webkit-transform: rotateX(360deg);
@@ -202,9 +230,11 @@
     -o-transform: rotateX(360deg);
     -ms-transform: rotateX(360deg);
 }
+
 .match {
     animation: remove 2s;
 }
+
 @keyframes remove {
     0% {
         opacity: 1;
@@ -213,11 +243,21 @@
         transform: rotate(360deg)
     }
 }
+
 .matched {
     visibility: hidden;
 }
 
 /************* Modal content *************/
+/************* Modal content *************/
+/************* Modal content *************/
+
+.win-stat>div {
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -228,6 +268,7 @@
     height: 100%;
     overflow: none;
 }
+
 .modal-content {
     font-family: "bungee", sans-serif;
     font-size: 5vmax;
@@ -239,16 +280,19 @@
     width: 70vw;
     height: 70vh;
 }
+
 .modal-content img {
     width: 40vw;
     height: 40vh;
 }
+
 .close {
     color: gray;
     float: right;
     font-size: 6vmax;
     font-weight: 700;
 }
+
 .close:hover {
     color: black;
     text-decoration: none;
@@ -256,18 +300,23 @@
 }
 
 /************* Media Queries *************/
+/************* Media Queries *************/
+/************* Media Queries *************/
+
 @media screen and (min-width: 270px) and (orientation: portrait) {
     #game-area {
         height: 25vh;
         padding-top: 10%;
     }
 }
+
 @media screen and (min-height: 360px) and (orientation: landscape) {
     #game-area {
         height: 30vh;
         width: 40vw;
     }
 }
+
 @media screen and (min-height: 568px) and (orientation: portrait) {
     #game-area {
         height: 25vh;
@@ -287,17 +336,20 @@
         float: right;
     }
 }
+
 @media screen and (min-height: 320px) and (orientation: landscape) {
     #game-area {
         height: 40vh;
         width: 40vw;
     }
 }
+
 @media screen and (min-width: 1024px) and (orientation: landscape) {
     #game-area {
         height: 35vh;
     }
 }
+
 @media screen and (min-width: 1280px) and (orientation: landscape) {
     #game-area {
         height: 45vh;
