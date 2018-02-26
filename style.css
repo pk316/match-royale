@@ -1,21 +1,150 @@
 @import 'https://fonts.googleapis.com/css?family=Bungee';
 
-
 .container{
-    background: url('images/background.jpg') no-repeat fixed center;
+    background: url('assets/images/background.jpg') no-repeat fixed center;
     background-size: cover;
-    position: absolute;
+    position: center;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
 }
 
-#gameArea{
-    width: 80%;
-    height: 70%;
-    border: 5px solid black;
+/************* Header content *************/
+/************* Header content *************/
+/************* Header content *************/
+
+.game-head {
+    display: flex;
+    font-family: "bungee", sans-serif;
+}
+
+.game-logo {
+    align-self: center;
+    height: 12vmin;
+    width: 12vmin;
+    background-image: url('assets/images/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: animate-logo 1s ease-in .5s, rattle 1s 1.5s;
+    animation-fill-mode: backwards;
+}
+
+@keyframes animate-logo {
+    0% {
+        transform: translateX(110vw) rotateY(360deg)
+    }
+    100% {
+        transform: translateX(0) rotate(0);
+    }
+}
+
+.game-title {
+    align-self: space-around;
+    text-align: center;
+    font-family: "bungee", sans-serif;
+    font-size: 9vmin;
+    animation : slam 1s ease-in-out;
+}
+
+@keyframes rattle {
+    0% {margin-top: 0; margin-left: 0;}
+    10% {margin-top: -20px; margin-left: 0;}
+    20% {margin-top: 0; margin-left: -20px;}
+    30% {margin-top: 20px; margin-left: 0;}
+    40% {margin-top: 0; margin-left: 20px;}
+    50% {margin-top: -20px; margin-left: 0;}
+    60% {margin-top: 0; margin-left: -20px;}
+    70% {margin-top: 20px; margin-left: 0;}
+    80% {margin-top: 0; margin-left: 20px;}
+    90% {margin-top: -10px; margin-left: 0;}
+    100% {margin-top: 0; margin-left: 0;}
+}
+
+@keyframes title {
+    0%{
+        transform: translateX(-100vw);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slam {
+    0% {
+        transform: scale(10, 10);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+/************* Main content *************/
+/************* Main content *************/
+/************* Main content *************/
+
+.stats{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   color: white;
+   font-family: "bungee",sans-serif;
+   text-shadow: 
+        -1px 0 black,
+        0 1px black,
+        2px 2px black,
+        1px -1px black;
+   width: 50vw;
+   padding-top: 3vh;
+   font-size: 1.7vmax;
+   font-weight: 900;
+   animation: animate-stats 1.5s ease-in;
+}
+
+.stats > div {
+    padding: 2%;
+}
+
+.stats .value {
+    text-align: center;
+}
+
+@keyframes animate-stats {
+    0% {
+        transform: translateX(-200px)
+    }
+    80% {
+        transform: translateX(120px)
+    }
+    100% {
+         transform: translateX(0)
+    }
+}
+
+#game-area{
+    width: 60vw;
+    height: 50vh;
     position: relative;
-    left: 10%;
-    top: -8%;
+    top: 5%;
+    animation: animate-game-area 1.5s ease-out;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+@keyframes animate-game-area {
+    0% {
+        transform: rotateX(-90deg)
+    }
+    100% {
+        transform: rotateX(0)
+    }
 }
 
 .game-nav {
@@ -26,26 +155,51 @@
     font-size: 2vh;
 }
 
-.game-head {
-    text-align: center;
-    font-family: "bungee", sans-serif;
-    position: relative;
+.reset{
+    font-family: "bungee",sans-serif;
+    font-size: 1.7vmax;
+    font-weight: 400;
+    color: white;
+    text-shadow : 
+       -1px 0 black,
+       0 2px black,
+       2px 0 black,
+       0 -1px black;
+    background-color: grey;
+    border: 2px solid black;
+    border-radius: 50px;
+    padding: 5px 10px;
+    transition: all .2sec;
 }
 
-.game-logo{
-    height: 100%;
-    width: 15%;
-    background-image: url('images/logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
+.reset:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+
+.reset:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
 }
 
 .card{
     width: 16%;
-    height: 32%;
-    position: relative;
-    float: left;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: .5s;
+}
+
+.card:hover {
+    animation: hover.15s 
+}
+
+@keyframes hover{
+    0%{
+        transform: translateY(15px)
+    }
+    100%{
+        transform: translateY(0)
+    }
 }
 
 .front, .back {
@@ -54,15 +208,151 @@
     top: 0;
     background-size: contain;
     background-repeat: no-repeat;
-}
-.front{
-    width: 80%;
-    height: 80%;
-    top: 7%;
-    left: 7%;
-}
-.back{
-    background-image: url('images/backCard.png');  
     width: 100%;
     height: 100%;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+}
+
+.front{
+    top: 4%;
+    left: 7%;
+}
+
+.back{
+    background-image: url('assets/images/backCard.png');  
+}
+
+.flip-card {
+    transform: rotateX(360deg);
+    -webkit-transform: rotateX(360deg);
+    -moz-transform: rotateX(360deg);
+    -o-transform: rotateX(360deg);
+    -ms-transform: rotateX(360deg);
+}
+
+.match {
+    animation: remove 2s;
+}
+
+@keyframes remove {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.matched {
+    visibility: hidden;
+}
+
+/************* Modal content *************/
+/************* Modal content *************/
+/************* Modal content *************/
+
+.win-stat>div {
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: none;
+}
+
+.modal-content {
+    font-family: "bungee", sans-serif;
+    font-size: 5vmax;
+    background-color: white;
+    text-align: center;
+    margin: 5% auto;
+    padding: 20px;
+    border: 2px solid gray;
+    width: 70vw;
+    height: 70vh;
+}
+
+.modal-content img {
+    width: 40vw;
+    height: 40vh;
+}
+
+.close {
+    color: gray;
+    float: right;
+    font-size: 6vmax;
+    font-weight: 700;
+}
+
+.close:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/************* Media Queries *************/
+/************* Media Queries *************/
+/************* Media Queries *************/
+
+@media screen and (min-width: 270px) and (orientation: portrait) {
+    #game-area {
+        height: 25vh;
+        padding-top: 10%;
+    }
+}
+
+@media screen and (min-height: 360px) and (orientation: landscape) {
+    #game-area {
+        height: 30vh;
+        width: 40vw;
+    }
+}
+
+@media screen and (min-height: 568px) and (orientation: portrait) {
+    #game-area {
+        height: 25vh;
+        width: 65vw;
+    }
+    .stats {
+        display: inline-flex;
+        flex-direction: column;
+    }
+    .games-played > div,
+    .attempts > div,
+    .accuracy > div
+    {
+        display: inline-block;
+    }
+    .stats .value {
+        float: right;
+    }
+}
+
+@media screen and (min-height: 320px) and (orientation: landscape) {
+    #game-area {
+        height: 40vh;
+        width: 40vw;
+    }
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+    #game-area {
+        height: 35vh;
+    }
+}
+
+@media screen and (min-width: 1280px) and (orientation: landscape) {
+    #game-area {
+        height: 45vh;
+        width: 60vw;
+    }
 }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta name="description" content="">
     <meta name="keywords" content="HTML,CSS">
@@ -10,27 +9,15 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="main.js"></script>
-    <script type="text/javascript" src="game.js"></script>
-    <script type="text/javascript" src="card.js"></script>
+    <script type="text/javascript" src="components/main.js"></script>
+    <script type="text/javascript" src="components/game.js"></script>
+    <script type="text/javascript" src="components/card.js"></script>
 </head>
-
 <body>
     <div class="container">
-    <!-- <div class="container" data-width="1280" data-height="960"> -->
         <header class="game-head">
             <div class="game-logo"></div>
-            <h1>Match Royale</h1>
-            <nav>
-                <ul class="game-nav">
-                    <li>
-                        <a href="settings.html">Settings</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                </ul>
-            </nav>
+            <h1 class="game-title">Match Royale</h1>
         </header>
         <section class="stats">
             <div class="games-played">
@@ -43,14 +30,31 @@
             </div>
             <div class="accuracy">
                 <div class="label">Accuracy</div>
-                <div class="value">n/a</div>
+                <div class="value">0</div>
             </div>
             <div>
-                <button class="reset">Reset Game</button>
+                <button class="reset">Reset</button>
             </div>
         </section>
-        <div id = "gameArea"></div>
+        <div id = "game-area"></div>
+            <div class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>You Win!</p>
+                    <div class="win-stat">
+                        <div class="attempts">
+                            <div class="label">Attempts</div>
+                            <div class="value">0</div>
+                        </div>
+                        <div class="accuracy">
+                            <div class="label">Accuracy</div>
+                            <div class="value">0</div>
+                        </div>
+                        <img src="assets/images/king.gif">
+                    </div>
+                    </div>
+                </div>     
+            </div>
     </div>
 </body>
-
 </html>
