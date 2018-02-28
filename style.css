@@ -351,6 +351,9 @@
 }
 
 @media screen and (min-width: 1280px) and (orientation: landscape) {
+    .game-head {
+        padding-right: 10%;
+    }
     #game-area {
         height: 45vh;
         width: 60vw;
