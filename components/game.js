@@ -10,17 +10,17 @@ function MemoryGame(){
         'assets/images/giant.png',
         'assets/images/goblin.png',
         'assets/images/hog.png',
-        'assets/images/iceWizard.png',
+        'assets/images/ice-wizard.png',
         'assets/images/pekka.png',
         'assets/images/prince.png',
         'assets/images/wizard.png',
         'assets/images/archer.png',
         'assets/images/dragon.png',
-        'assets/images/electroWiz.png',
+        'assets/images/electro-wiz.png',
         'assets/images/golem.png',
         'assets/images/knight.png',
         'assets/images/lumberjack.png',
-        'assets/images/miniPekka.png',
+        'assets/images/mini-pekka.png',
         'assets/images/musketeer.png',
         'assets/images/princess.png',
         'assets/images/skeleton.png',
@@ -33,7 +33,7 @@ function MemoryGame(){
         'assets/images/bandit.png',
         'assets/images/hunter.png',
         'assets/images/sparky.png',
-        'assets/images/megaKnight.png'
+        'assets/images/mega-knight.png'
     ];
 
     this.initGame = function() {
