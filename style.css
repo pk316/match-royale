@@ -192,12 +192,12 @@
 }
 
 .card:hover .back {
-    animation: hover.15s 
+    animation: hover .2s ease-out;
 }
 
 @keyframes hover{
     0%{
-        transform: translateY(15px)
+        transform: translateY(20px);
     }
     100%{
         transform: translateY(0)
