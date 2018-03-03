@@ -102,8 +102,9 @@
         2px 2px black,
         1px -1px black;
    width: 50vw;
-   padding-top: 3vh;
-   font-size: 1.7vmax;
+   /* padding-top: 3vh;
+   font-size: 1.7vmin; */
+   font-size: 3vmin;
    font-weight: 900;
    animation: animate-stats 1.5s ease-in;
 }
@@ -157,7 +158,8 @@
 
 .reset{
     font-family: "bungee",sans-serif;
-    font-size: 1.7vmax;
+    /* font-size: 1.7vmax; */
+    font-size: 3vmin;
     font-weight: 400;
     color: white;
     text-shadow : 
@@ -175,6 +177,7 @@
 .reset:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+    cursor: pointer;
 }
 
 .reset:active {
@@ -189,13 +192,13 @@
     transition: .5s;
 }
 
-.card:hover {
-    animation: hover.15s 
+.card:hover .back {
+    animation: hover .2s ease-out;
 }
 
 @keyframes hover{
     0%{
-        transform: translateY(15px)
+        transform: translateY(20px);
     }
     100%{
         transform: translateY(0)
@@ -278,19 +281,17 @@
     padding: 20px;
     border: 2px solid gray;
     width: 70vw;
-    height: 70vh;
+    max-width: 70vh;
 }
 
 .modal-content img {
     width: 40vw;
-    height: 40vh;
+    max-width: 40vh;
 }
 
 .close {
     color: gray;
     float: right;
-    font-size: 6vmax;
-    font-weight: 700;
 }
 
 .close:hover {
@@ -310,17 +311,17 @@
     }
 }
 
-@media screen and (min-height: 360px) and (orientation: landscape) {
+/* @media screen and (min-height: 360px) and (orientation: landscape) {
     #game-area {
         height: 30vh;
         width: 40vw;
     }
-}
+} */
 
 @media screen and (min-height: 568px) and (orientation: portrait) {
     #game-area {
-        height: 25vh;
-        width: 65vw;
+        height: 30vh;
+        width: 80vw;
     }
     .stats {
         display: inline-flex;
@@ -337,18 +338,31 @@
     }
 }
 
-@media screen and (min-height: 320px) and (orientation: landscape) {
+@media screen and (max-height: 520px) and (orientation: landscape) {
     #game-area {
         height: 40vh;
-        width: 40vw;
+        width: 20vw;
+    }
+    .stats {
+       width: 20vw;
+    }
+}
+@media screen and (max-height: 250px) and (orientation: landscape) {
+    #game-area {
+        height: 40vh;
+        width: 20vw;
+    }
+    .stats {
+        width: 20vw;
     }
 }
 
-@media screen and (min-width: 1024px) and (orientation: landscape) {
+
+/* @media screen and (min-width: 1024px) and (orientation: landscape) {
     #game-area {
         height: 35vh;
     }
-}
+} */
 
 @media screen and (min-width: 1280px) and (orientation: landscape) {
     .game-head {
@@ -359,3 +373,16 @@
         width: 60vw;
     }
 }
+/* @media screen and (min-width: 900px) and (min-height: 100px) {
+    .modal-content {
+        font-family: "bungee", sans-serif;
+        font-size: 5vmax;
+        background-color: white;
+        text-align: center;
+        margin: 5% auto;
+        padding: 20px;
+        border: 2px solid gray;
+        width: 70vw;
+        max-width: 70vh;
+    }
+} */
