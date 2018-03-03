@@ -158,7 +158,8 @@
 
 .reset{
     font-family: "bungee",sans-serif;
-    font-size: 1.7vmax;
+    /* font-size: 1.7vmax; */
+    font-size: 3vmin;
     font-weight: 400;
     color: white;
     text-shadow : 
