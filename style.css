@@ -42,6 +42,7 @@
 }
 
 .game-title {
+    align-self: center;
     align-self: space-around;
     text-align: center;
     font-family: "bungee", sans-serif;
@@ -101,7 +102,7 @@
         0 1px black,
         2px 2px black,
         1px -1px black;
-   width: 50vw;
+   width: 70vw;
    /* padding-top: 3vh;
    font-size: 1.7vmin; */
    font-size: 3vmin;
@@ -338,24 +339,42 @@
     }
 }
 
-@media screen and (max-height: 520px) and (orientation: landscape) {
+@media screen and (max-height: 520px) and (min-width:800px) and (orientation: landscape) {
+    .game-head{
+        height: 250px;
+    }
+    .game-title {
+        font-size: 50px;
+        position: relative;
+    }
+    .game-logo {
+        height: 50px;
+        width: 50px;
+    }
+  .stats {
+      position: relative;
+      height: 200px;
+      width: 60vw;
+      font-size: 20px;
+      justify-content: space-around;
+  }
+    .card {
+        height: 120px;
+    }
+    #game-area {
+        height: 40vh;
+        width: 60vw;
+    }
+}
+/* @media screen and (max-height: 250px) and (orientation: landscape) {
     #game-area {
         height: 40vh;
         width: 20vw;
     }
     .stats {
-       width: 20vw;
-    }
-}
-@media screen and (max-height: 250px) and (orientation: landscape) {
-    #game-area {
-        height: 40vh;
         width: 20vw;
     }
-    .stats {
-        width: 20vw;
-    }
-}
+} */
 
 
 /* @media screen and (min-width: 1024px) and (orientation: landscape) {
@@ -367,9 +386,10 @@
 @media screen and (min-width: 1280px) and (orientation: landscape) {
     .game-head {
         padding-right: 10%;
-    }
+        line-height: 0px;
+        }
     #game-area {
-        height: 45vh;
+        height: 30vw;
         width: 60vw;
     }
 }
