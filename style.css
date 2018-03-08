@@ -19,6 +19,7 @@
 .game-head {
     display: flex;
     font-family: "bungee", sans-serif;
+    padding-top: 2%;
 }
 
 .game-logo {
@@ -48,6 +49,7 @@
     font-family: "bungee", sans-serif;
     font-size: 9vmin;
     animation : slam 1s ease-in-out;
+    margin: 0;
 }
 
 @keyframes rattle {
@@ -102,9 +104,9 @@
         0 1px black,
         2px 2px black,
         1px -1px black;
+   min-height: 100px;
    width: 50vw;
-   /* padding-top: 3vh;
-   font-size: 1.7vmin; */
+   padding: 0 1%;
    font-size: 3vmin;
    font-weight: 900;
    animation: animate-stats 1.5s ease-in;
@@ -358,6 +360,9 @@
       font-size: 20px;
       justify-content: space-around;
   }
+  .reset {
+      font-size: 20px;
+  }
     .card {
         height: 120px;
     }
@@ -385,7 +390,7 @@
 
 @media screen and (min-width: 1280px) and (orientation: landscape) {
     .game-head {
-        padding-right: 10%;
+        padding: 2% 10% 2% 0;
         line-height: 0px;
         }
     #game-area {
