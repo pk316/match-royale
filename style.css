@@ -290,14 +290,14 @@ body {
     margin: 5% auto;
     padding: 20px;
     border: 2px solid gray;
-    width: 70vw;
+    width: 50vw;
 
 }
 
-.modal-content img {
+/* .modal-content img {
     width: 40vw;
     max-width: 40vh;
-}
+} */
 
 .close {
     color: gray;
