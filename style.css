@@ -1,11 +1,17 @@
 @import 'https://fonts.googleapis.com/css?family=Bungee';
 
-.container{
+body {
     background: url('assets/images/background.jpg') no-repeat fixed center;
     background-size: cover;
     position: center;
+
+}
+.container {
+    /* background: url('assets/images/background.jpg') no-repeat fixed center;
+    background-size: cover;
+    position: center;
     width: 100vw;
-    height: 100vh;
+    height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start; 
@@ -104,7 +110,7 @@
         0 1px black,
         2px 2px black,
         1px -1px black;
-   min-height: 100px;
+   min-height: 50px;
    width: 50vw;
    padding: 0 1%;
    font-size: 3vmin;
@@ -272,7 +278,8 @@
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: none;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .modal-content {
@@ -284,7 +291,7 @@
     padding: 20px;
     border: 2px solid gray;
     width: 70vw;
-    max-width: 70vh;
+
 }
 
 .modal-content img {
@@ -343,7 +350,7 @@
 
 @media screen and (max-height: 520px) and (min-width:800px) and (orientation: landscape) {
     .game-head{
-        height: 250px;
+        height: 50px;
     }
     .game-title {
         font-size: 50px;
@@ -355,7 +362,6 @@
     }
   .stats {
       position: relative;
-      height: 200px;
       width: 60vw;
       font-size: 20px;
       justify-content: space-around;
