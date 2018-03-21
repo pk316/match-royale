@@ -102,7 +102,8 @@ body {
 .stats{
    display: flex;
    flex-direction: row;
-   justify-content: space-between;
+   align-self: stretch;
+   justify-content: space-around;
    color: white;
    font-family: "bungee",sans-serif;
    text-shadow: 
@@ -111,7 +112,7 @@ body {
         2px 2px black,
         1px -1px black;
    min-height: 50px;
-   width: 50vw;
+   /* width: 50vw; */
    padding: 0 1%;
    font-size: 3vmin;
    font-weight: 900;
